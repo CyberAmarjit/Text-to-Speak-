@@ -50,6 +50,70 @@ Command	Function
 /music on	बैकग्राउंड म्यूजिक ऑन
 /music off	बैकग्राउंड म्यूजिक ऑफ
 
+✅ 100% Working Fix (for Termux)
+
+Step 1. पहले पुराने version uninstall करें
+```bash 
+pip uninstall python-telegram-bot -y
+pip uninstall urllib3 -y
+pip uninstall six -y
+```
+
+---
+
+Step 2. फिर dependencies clean reinstall करें
+```bash 
+pip install urllib3==1.26.20 six==1.16.0
+```
+
+
+---
+
+Step 3. अब सही compatible version इंस्टॉल करें
+
+> python-telegram-bot के v20+ versions Termux में errors देते हैं।
+इसलिए हम v13.15 version install करेंगे (यह आपके कोड के साथ compatible है)।
+
+
+```bash 
+pip install python-telegram-bot==13.15
+```
+
+---
+
+Step 4. Verify Installation
+
+ये चलाकर चेक करें 👇
+```bash 
+python -m telegram
+```
+
+अगर कोई error नहीं आया तो ✅ सब ठीक है।
+
+
+---
+
+Step 5. फिर अपना bot चलाएँ
+```bash 
+python bot.py
+```
+
+---
+
+⚡ अगर फिर भी वही error आए:
+
+तो ये दो कमांड चलाइए (force reinstall):
+
+```bash
+pip install --upgrade --force-reinstall python-telegram-bot==13.15
+pip install --upgrade --force-reinstall urllib3==1.26.20 six==1.16.0
+```
+फिर दोबारा:
+```bash 
+python bot.py
+```
+अब आपका bot चल जाएगा बिना किसी warning/error के 🚀
+
 
 # ⚙️ Auto-Start Setup for Termux (Voice Bot)
 
